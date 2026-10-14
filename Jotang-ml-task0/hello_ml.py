@@ -1,4 +1,5 @@
 import numpy as np  # 导入NumPy库，用来做矩阵运算
+import torch # 导入PyTorch库，用来做张量运算
 
 # ================= 第一部分：字典 + 函数 =================
 
@@ -59,3 +60,18 @@ C = np.dot(A, B) # 或者写 C = A @ B
 print("矩阵相乘结果C:")
 print(C)
 print("矩阵C的形状:", C.shape)  # 重点看这里，应该是 (3, 2)
+# ================= 第三部分：PyTorch 张量运算 =================
+
+print("\n--- PyTorch 张量运算 ---")
+# 创建两个 PyTorch 张量（和刚才矩阵逻辑一样）
+A_torch = torch.tensor([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]], dtype=torch.float32)
+B_torch = torch.tensor([[1, 0], [0, 1], [1, 0], [0, 1]], dtype=torch.float32)
+
+print("张量 A 的形状:", A_torch.shape)
+print("张量 B 的形状:", B_torch.shape)
+
+# 进行 PyTorch 张量乘法（用 @ 或者 torch.matmul）
+C_torch = A_torch @ B_torch
+print("张量相乘的结果:")
+print(C_torch)
+print("张量 C 的形状:", C_torch.shape)

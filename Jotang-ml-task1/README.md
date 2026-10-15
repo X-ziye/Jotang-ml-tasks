@@ -64,16 +64,25 @@
 ## 6. 实验图表
 
 ### 隐藏层=16 (基线)
+
 ![H16 Loss](./loss_accuracy_curves_h16.png)
+
 ![H16 决策边界](./decision_boundary_h16.png)
+
 ![H16 混淆矩阵](./confusion_matrix_h16.png)
 
 ### 隐藏层=2 (欠拟合)
+
 ![H2 Loss](./loss_accuracy_curves_h2.png)
+
 ![H2 决策边界](./decision_boundary_h2.png)
+
 ![H2 混淆矩阵](./confusion_matrix_h2.png)
 
 ### 隐藏层=128 (潜在过拟合)
+
 ![H128 Loss](./loss_accuracy_curves_h128.png)
+
 ![H128 决策边界](./decision_boundary_h128.png)
+
 ![H128 混淆矩阵](./confusion_matrix_h128.png)

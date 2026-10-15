@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 plt.rcParams['font.sans-serif'] = ['SimHei'] 
 plt.rcParams['axes.unicode_minus'] = False 
 
-# 🎯 修改这里做对照实验：16是基线，2是欠拟合，128是过拟合
+# 这里做对照实验：16是基线，2是欠拟合，128是过拟合
 hidden_size = 128 
 
 # ================= 1. 数据生成与划分 =================
@@ -102,12 +102,12 @@ plt.title('Accuracy Curve')
 plt.legend()
 
 plt.tight_layout()
-# 🎯 文件名带上 hidden_size
+#  文件名带上 hidden_size
 plt.savefig(f'loss_accuracy_curves_h{hidden_size}.png', dpi=150)
 print(f"Loss 与 Accuracy 曲线已保存为 loss_accuracy_curves_h{hidden_size}.png")
 
 # ================= 5. 绘制二维决策边界 =================
-# 🎯 函数增加 suffix 参数
+#  函数增加 suffix 参数
 def plot_decision_boundary(model, X, y, title, suffix=""):
     x_min, x_max = X[:, 0].min() - 0.5, X[:, 0].max() + 0.5
     y_min, y_max = X[:, 1].min() - 0.5, X[:, 1].max() + 0.5
@@ -124,15 +124,15 @@ def plot_decision_boundary(model, X, y, title, suffix=""):
     plt.scatter(X[y==1, 0], X[y==1, 1], c='blue', label='类别 1', edgecolors='k')
     plt.title(title)
     plt.legend()
-    # 🎯 文件名带上 suffix
+    #  文件名带上 suffix
     plt.savefig(f'decision_boundary_{suffix}.png', dpi=150)
     print(f"决策边界图已保存为 decision_boundary_{suffix}.png")
 
-# 🎯 调用时传入后缀
+#  调用时传入后缀
 plot_decision_boundary(model, X_test, y_test, f"MLP 决策边界 (测试集, 隐藏层={hidden_size})", suffix=f"h{hidden_size}")
 
 # ================= 6. 模型保存与加载 =================
-# 🎯 文件名带上 hidden_size
+#  文件名带上 hidden_size
 torch.save(model.state_dict(), f'mlp_model_h{hidden_size}.pth')
 print(f"模型已保存为 mlp_model_h{hidden_size}.pth")
 
@@ -153,6 +153,6 @@ cm = confusion_matrix(y_test_t.numpy(), y_test_pred_class.numpy())
 disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['类别 0', '类别 1'])
 disp.plot(cmap='Blues')
 plt.title(f"测试集混淆矩阵 (隐藏层={hidden_size})")
-# 🎯 文件名带上 hidden_size
+#  文件名带上 hidden_size
 plt.savefig(f'confusion_matrix_h{hidden_size}.png', dpi=150)
 print(f"混淆矩阵已保存为 confusion_matrix_h{hidden_size}.png")

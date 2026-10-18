@@ -1,5 +1,9 @@
 import numpy as np  # 导入NumPy库，用来做矩阵运算
 import torch # 导入PyTorch库，用来做张量运算
+import sys
+print("Python 版本:", sys.version)
+print("PyTorch 版本:", torch.__version__)
+print("CUDA 是否可用:", torch.cuda.is_available())
 
 # ================= 第一部分：字典 + 函数 =================
 

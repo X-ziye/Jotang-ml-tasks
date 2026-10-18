@@ -155,6 +155,10 @@ SGD 是原型，作业里一般用 Adam。学习率还是要设的。
 ## 二、Task 2 Python 热身（运行命令与结果）
 
 ### 代码测试结果
+**运行命令**：`conda run -n jotang python hello_ml.py`
+Python 版本: 3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]
+PyTorch 版本: 2.14.1+cpu
+CUDA 是否可用: False
 成绩单: {'小明': 90, '小红': 85, '小刚': 95}
 平均分: 90.0
 最高分: 小刚 成绩: 95

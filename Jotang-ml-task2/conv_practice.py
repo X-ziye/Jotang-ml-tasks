@@ -32,7 +32,7 @@ def my_conv2d(image, kernel, padding=0):
     for i in range(H_out):
         for j in range(W_out):
             output[i, j] = np.sum(image[i:i+K_h, j:j+K_w] * kernel)
-    # 题目要求：处理越界值
+    # 卷积算出来可能是负数（比如边缘检测）或者超过 255，直接用 clip 截断到 0-255，防止保存成图片时溢出报错
     output = np.clip(output, 0, 255)
     return output
 

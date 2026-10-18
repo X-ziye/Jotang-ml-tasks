@@ -24,7 +24,7 @@ y_t = torch.tensor(y_val, requires_grad=True)
 f_t = (x_t * y_t + x_t**2)**2
 f_t.backward()
 print(f"PyTorch 算出的梯度: df/dx = {x_t.grad.item()}, df/dy = {y_t.grad.item()}")
-print("✅ 实践 1 校验通过！\n")
+print(" 实践 1 校验通过！\n")
 
 
 # ================= 实践 2：神经网络的梯度 =================
@@ -85,4 +85,4 @@ for N in [1, 5]:
     print(f"dW2 的形状: {dW2.shape} (不受 Batch 影响)")
     print(f"最大绝对误差: {np.max(np.abs(dW1 - W1_t.grad.numpy())):.10f}")
 
-print("\n✅ 实践 2 校验通过！数值一致，形状对齐！")
+print("\n 实践 2 校验通过！数值一致，形状对齐！")

@@ -30,7 +30,7 @@ for url in urls:
 
 image_input = torch.stack([preprocess(img) for img in images]).to(device)
 
-# 3. 准备 4 段文本描述 (故意加入一句错误的描述)
+# 3. 准备 4 段文本描述 (第四句故意描述错颜色)
 texts = [
     "a photo of a cat",
     "a photo of a dog",

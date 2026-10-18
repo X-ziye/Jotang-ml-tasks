@@ -28,7 +28,7 @@ print("正在加载 CIFAR-10 数据集，首次运行会自动下载...")
 train_raw = datasets.CIFAR10(root='./data', train=True, download=True, transform=None)
 test_raw = datasets.CIFAR10(root='./data', train=False, download=True, transform=None)
 
-# 自定义 Dataset 类，完美解决越界问题
+# 自定义 Dataset 类，过滤出猫和狗的数据，并把标签转成 0/1
 class CatDogDataset(Dataset):
     def __init__(self, dataset, indices, transform=None):
         self.dataset = dataset

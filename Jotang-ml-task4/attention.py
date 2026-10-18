@@ -19,7 +19,7 @@ def scaled_dot_product_attention(Q, K, V, mask=None):
     # 维度变化: (B, L, d_k) * (B, d_k, L) -> (B, L, L)
     scores = torch.matmul(Q, K.transpose(-2, -1)) / torch.sqrt(torch.tensor(d_k, dtype=torch.float32))
     
-    # 2. Mask 处理（Decoder 防作弊用，此处先忽略）
+    # 2. 如果有 mask（比如 Decoder 防止看未来），就把该遮的地方填成负无穷
     if mask is not None:
         scores = scores.masked_fill(mask == 0, float('-inf'))
         
@@ -93,4 +93,4 @@ if __name__ == '__main__':
     plt.xlabel("Key Index")
     plt.ylabel("Query Index")
     plt.savefig('attention_heatmap.png', dpi=150)
-    print("热力图已保存为 attention_heatmap.png")
+    print("热力图已保存")
